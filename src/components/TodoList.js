@@ -1,9 +1,10 @@
-export default function TodoList() {
-  // todo: remove these hardcoded values
-  const names = ["Bas", "Brent", "Nicole", "Ronald", "Sean"];
-  const list = names.map(function (value, index) {
+export default function TodoList({ todos }) {
+  const list = todos.map(function (value, index) {
     return <li key={index}>{value}</li>;
   });
 
-  return <ul>{list}</ul>;
+  if (todos.length) {
+    return <ul>{list}</ul>;
+  }
+  return <></>;
 }

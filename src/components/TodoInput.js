@@ -14,7 +14,7 @@ export default function TodoInput({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={value} />
+      <input placeholder="Add a todo" onChange={handleChange} value={value} />
     </form>
   );
 }
