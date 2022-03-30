@@ -13,11 +13,17 @@ function TodoApp() {
   function handleSubmit(value) {
     setTodos([...todos, value]);
   }
+  function handleRemove(removedIndex) {
+    const filteredList = todos.filter(function (_, index) {
+      return index !== removedIndex;
+    });
+    setTodos(filteredList);
+  }
 
   return (
     <div className="todo-app">
       <TodoInput onSubmit={handleSubmit} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemove={handleRemove} />
     </div>
   );
 }

@@ -73,3 +73,19 @@ select {
 input {
   width: 100%;
 }
+.todo-rows {
+  padding: 0;
+}
+.todo-rows li {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.remove-button {
+  background: none;
+  color: inherit;
+  border: none;
+  border: 1px solid darkred;
+  background: white;
+  color: darkred;
+}
