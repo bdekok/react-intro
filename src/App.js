@@ -2,12 +2,16 @@ import cats from "./cats.json";
 import CatBackground from "./components/CatBackground/CatBackground";
 import CatInfo from "./components/CatInfo/CatInfo";
 import CatButton from "./components/CatButton/CatButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function CatApp() {
   const [currentCatIndex, setCatIndex] = useState(0);
   const currentCat = cats[currentCatIndex];
   const currentPicture = currentCat.image.url;
+
+  useEffect(() => {
+    document.title = currentCat.name;
+  }, [currentCat]);
 
   function getNextCat() {
     const isLastCat = currentCatIndex === cats.length - 1;
